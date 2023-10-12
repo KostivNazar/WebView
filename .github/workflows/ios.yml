@@ -15,8 +15,8 @@ jobs:
     - name: Set up Xcode
       uses: actions/setup-xcode@v2
       with:
-        xcode-version: 13  # Use your desired Xcode version
+        xcode-version: 15
 
     - name: Build and Test
       run: |
-        xcodebuild -project WebView.xcodeproj -scheme WebView -destination 'platform=iOS Simulator,OS=15.0,name=iPhone 11' test
+        xcodebuild -project YourApp.xcodeproj -scheme YourApp -destination 'platform=iOS Simulator,OS=15.0,name=iPhone 11' test
