@@ -5,16 +5,18 @@ on:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
-
 jobs:
   build:
     runs-on: macOS-latest
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
-    - name: Print simulators
-      run: |
-        xcrun simctl list
+      uses: actions/checkout@v2
+
+    - name: Set up Xcode
+      uses: actions/setup-xcode@v2
+      with:
+        xcode-version: 13  # Use your desired Xcode version
+
     - name: Build and Test
       run: |
-        xcodebuild -project WebView.xcodeproj -destination 'platform=iOS Simulator,name=Any iOS Simulator Device' -scheme WebView test
+        xcodebuild -project WebView.xcodeproj -scheme WebView -destination 'platform=iOS Simulator,OS=15.0,name=iPhone 11' test
