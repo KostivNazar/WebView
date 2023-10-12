@@ -13,8 +13,8 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
     - name: Print simulators
-    run: |
-    xcrun simctl list
+      run: |
+        xcrun simctl list
     - name: Build and Test
       run: |
         xcodebuild -project WebView.xcodeproj -destination 'platform=iOS Simulator,name=iPhone 13,OS=16.2' -scheme WebView test
