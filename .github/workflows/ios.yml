@@ -15,4 +15,4 @@ jobs:
 
     - name: Build and Test
       run: |
-        xcodebuild -project WebView.xcodeproj -destination 'platform=iOS Simulator,name=iPhone 11,OS=16.2' -scheme WebView test
+        xcodebuild -project WebView.xcodeproj -destination 'platform=iOS Simulator,name=iPhone 13,OS=16.2' -scheme WebView test
